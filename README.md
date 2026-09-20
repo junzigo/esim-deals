@@ -54,4 +54,3 @@ After approval, put the real approved destination in the fourth provider column 
 First release publishes only the website and repository; no X/Facebook account or automated messages. Credentials must stay outside the repository and public assets.
 
 站点规则用 I-Lang 协议描述，见 `.ilang/site.ilang`，协议说明 ilang.ai。
-

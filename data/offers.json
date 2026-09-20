@@ -1,0 +1,94 @@
+{
+  "checked_at": "2026-09-19T17:33:53.456876+00:00",
+  "offers": [
+    {
+      "id": "airalo-85e0b908b8",
+      "provider": "airalo",
+      "title": "15% off — First eSIM purchase",
+      "code": "SEPTEMBER15!",
+      "discount_percent": 15,
+      "terms": "For a first eSIM purchase. Check eligibility and final savings with Airalo. Discount methods cannot be combined.",
+      "offer_url": "https://www.airalo.com/m/features/airalo-discounts-deals",
+      "source_url": "https://www.airalo.com/m/features/airalo-discounts-deals",
+      "fetched_at": "2026-09-19T17:33:53.456876+00:00",
+      "evidence": "SEPTEMBER15! – enjoy 15% off your first eSIM",
+      "source_sha256": "58df41d2056d77fc275468819692fd34389e9d3c4766148efb7d70ee109550a7",
+      "status": "observed"
+    },
+    {
+      "id": "ubigi-22b0493861",
+      "provider": "ubigi",
+      "title": "10% off — First eSIM data plan",
+      "code": "WELCOME10",
+      "discount_percent": 10,
+      "terms": "First purchase/top-up in the Ubigi app or selfcare portal. Monthly data plans are excluded.",
+      "offer_url": "https://cellulardata.ubigi.com/help-center/faq/ubigi-esim-service/ubigi-welcome-with-our-promo-code-welcome10/?wmc-currency=USD",
+      "source_url": "https://cellulardata.ubigi.com/help-center/faq/ubigi-esim-service/ubigi-welcome-with-our-promo-code-welcome10/?wmc-currency=USD",
+      "fetched_at": "2026-09-19T17:33:55.109673+00:00",
+      "evidence": "promotional code WELCOME10 to get 10% discount on your first eSIM data plan",
+      "source_sha256": "c0993bf8057444e9fe938857ddd5b110aa4a8e55cd967a040467a28d80aa6cb2",
+      "status": "observed"
+    },
+    {
+      "id": "redteago-2b934b0da0",
+      "provider": "redteago",
+      "title": "30% off — Japan fixed standard data plans",
+      "code": "JAPANTRIP26",
+      "discount_percent": 30,
+      "terms": "Redeem in the RedteaGO app under Me / Redeem Promo Code. Applies to Japan fixed standard data plans. The source is a seasonal guide; confirm availability before purchase.",
+      "offer_url": "https://shop.redteago.com/japan-esim-guide",
+      "source_url": "https://shop.redteago.com/japan-esim-guide",
+      "fetched_at": "2026-09-19T17:33:58.223571+00:00",
+      "evidence": "Get 30% Off for Your Japan eSIM Use the code in-app and stay connected in Japan. Code: JAPANTRIP26",
+      "source_sha256": "2c369362617b1feb320a911f95b7afadf4247981b43bd57216d033148fdb517f",
+      "status": "observed"
+    }
+  ],
+  "sources": [
+    {
+      "provider": "airalo",
+      "source_url": "https://www.airalo.com/m/features/airalo-discounts-deals",
+      "attempted_at": "2026-09-19T17:33:53.456876+00:00",
+      "status": "ok",
+      "count": 1,
+      "fetched_at": "2026-09-19T17:33:53.456876+00:00"
+    },
+    {
+      "provider": "holafly",
+      "source_url": "https://esim.holafly.com/data-plans/holafly-esim-discount-code/",
+      "attempted_at": "2026-09-19T17:33:54.995840+00:00",
+      "status": "unavailable",
+      "reason": "URLError"
+    },
+    {
+      "provider": "nomad",
+      "source_url": "https://www.nomadesim.com/",
+      "attempted_at": "2026-09-19T17:33:55.029841+00:00",
+      "status": "unavailable",
+      "reason": "URLError"
+    },
+    {
+      "provider": "saily",
+      "source_url": "https://saily.com/coupon//",
+      "attempted_at": "2026-09-19T17:33:55.063812+00:00",
+      "status": "unavailable",
+      "reason": "HTTP 403"
+    },
+    {
+      "provider": "ubigi",
+      "source_url": "https://cellulardata.ubigi.com/help-center/faq/ubigi-esim-service/ubigi-welcome-with-our-promo-code-welcome10/?wmc-currency=USD",
+      "attempted_at": "2026-09-19T17:33:55.109673+00:00",
+      "status": "ok",
+      "count": 1,
+      "fetched_at": "2026-09-19T17:33:55.109673+00:00"
+    },
+    {
+      "provider": "redteago",
+      "source_url": "https://shop.redteago.com/japan-esim-guide",
+      "attempted_at": "2026-09-19T17:33:58.223571+00:00",
+      "status": "ok",
+      "count": 1,
+      "fetched_at": "2026-09-19T17:33:58.223571+00:00"
+    }
+  ]
+}

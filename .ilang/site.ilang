@@ -1,0 +1,36 @@
+::ILANG
+[TYPE:config][PROJECT:esim-deals][LANG:zh]
+::STATE{@SITE, brand:esim-deals, niche:Travel eSIM offers for US travelers, domain:https://esim-deals-preview.pages.dev, locale:en-US}
+::MODULE{PROVIDERS|title:官方来源与已批准联盟链接}
+airalo | https://www.airalo.com/ | https://www.airalo.com/m/features/airalo-discounts-deals |
+holafly | https://esim.holafly.com/ | https://esim.holafly.com/data-plans/holafly-esim-discount-code/ |
+nomad | https://www.nomadesim.com/ | https://www.nomadesim.com/ |
+saily | https://saily.com/ | https://saily.com/coupon// |
+ubigi | https://cellulardata.ubigi.com/ | https://cellulardata.ubigi.com/help-center/faq/ubigi-esim-service/ubigi-welcome-with-our-promo-code-welcome10/?wmc-currency=USD |
+redteago | https://redteago.com/ | https://shop.redteago.com/japan-esim-guide |
+::MODULE{FIELDS|title:实际提取的字段}
+title price currency offer_url valid_until source_url fetched_at code discount_percent terms evidence
+::MODULE{RUNTIME|title:机器读取 JSON 配置；只匹配公开页面正文}
+{
+  "interval_hours": 6,
+  "cron": "23 */6 * * *",
+  "stale_after_hours": 30,
+  "request_timeout_seconds": 25,
+  "user_agent": "esim-deals-radar/1.0",
+  "repository": "https://github.com/junzigo/esim-deals",
+  "extractors": {
+    "airalo": [{"pattern": "(?P<code>[A-Z][A-Z0-9!]{3,30})\\s*[–—-]\\s*enjoy\\s+(?P<discount>\\d{1,2})%\\s+off your first eSIM", "label": "First eSIM purchase", "terms": "For a first eSIM purchase. Check eligibility and final savings with Airalo. Discount methods cannot be combined."}],
+    "holafly": [{"pattern": "(?P<label>Short trips|Monthly plans)\\s+Code\\s*\\((?P<discount>\\d{1,2})% off\\):\\s*(?P<code>[A-Z0-9]{4,30})", "terms": "Use the code for the specified plan type. Only one promo code per purchase. Monthly plans are subscriptions."}],
+    "nomad": [],
+    "saily": [],
+    "ubigi": [{"pattern": "promotional code\\s+(?P<code>[A-Z0-9]{4,30})\\s+to get\\s+(?P<discount>\\d{1,2})% discount on your first eSIM data plan", "label": "First eSIM data plan", "terms": "First purchase/top-up in the Ubigi app or selfcare portal. Monthly data plans are excluded."}],
+    "redteago": [{"pattern": "Get\\s+(?P<discount>\\d{1,2})% Off for Your Japan eSIM.{0,160}?Code:\\s*(?P<code>[A-Z0-9]{4,30})", "label": "Japan fixed standard data plans", "terms": "Redeem in the RedteaGO app under Me / Redeem Promo Code. Applies to Japan fixed standard data plans. The source is a seasonal guide; confirm availability before purchase."}]
+  }
+}
+::RULE{抓不到 price⇒省略 price 和 priceCurrency；没有截止日期⇒写未公布，不编 priceValidUntil}
+::RULE{抓取失败⇒旧数据移出当前优惠；超过 stale_after_hours⇒不显示为当前优惠；已过期⇒下架}
+::RULE{构建必须读取 PROVIDERS；删除一家后相关页面与优惠必须消失}
+::RULE{页面包含来源、抓取时间、资格条件；禁止声称已测试结账或保证可用}
+::RULE{联盟链接只有获批后填写；外链标记 sponsored；不做自动社交发布}
+::BOUNDARY{never:编优惠 编价格 编佣金 绕反爬 绕robots 品牌词竞价 cookie注入 自买自推|scope=permanent}
+
