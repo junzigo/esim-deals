@@ -2,7 +2,7 @@
 
 An independent, English-language directory of official travel eSIM promotions for US travelers. Built with Python's standard library. No runtime LLM, paid data API, database, server process or third-party Python dependency.
 
-**Deployment status: live at https://esim-deals-apb.pages.dev/.** Public source: https://github.com/junzigo/esim-deals. GitHub Actions run [35482450665](https://github.com/junzigo/esim-deals/actions/runs/35482450665) completed successfully on 2026-09-20. Its observation commit `cfa5059ea7ee8a948beb5f08c728e5f60a6e0210` automatically triggered successful Cloudflare Pages deployment `d0bf4866-0302-4478-a583-e266451c6110`. The production page was browser-verified. The six-hour schedule is configured; this verifies the push-triggered pipeline, not a future scheduled run.
+**Production domain: https://getesimdeals.com/.** Cloudflare Pages origin: https://esim-deals-apb.pages.dev/. Public source: https://github.com/junzigo/esim-deals. GitHub Actions run [35482450665](https://github.com/junzigo/esim-deals/actions/runs/35482450665) completed successfully on 2026-09-20. Its observation commit `cfa5059ea7ee8a948beb5f08c728e5f60a6e0210` automatically triggered successful Cloudflare Pages deployment `d0bf4866-0302-4478-a583-e266451c6110`. The production page was browser-verified. The six-hour schedule is configured; this verifies the push-triggered pipeline, not a future scheduled run.
 
 ## Run
 
