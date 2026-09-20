@@ -1,6 +1,6 @@
 ::ILANG
 [TYPE:config][PROJECT:esim-deals][LANG:zh]
-::STATE{@SITE, brand:esim-deals, niche:Travel eSIM offers for US travelers, domain:https://esim-deals-apb.pages.dev, locale:en-US}
+::STATE{@SITE, brand:esim-deals, niche:Travel eSIM offers for US travelers, domain:https://getesimdeals.com, locale:en-US}
 ::MODULE{PROVIDERS|title:官方来源与已批准联盟链接}
 airalo | https://www.airalo.com/ | https://www.airalo.com/m/features/airalo-discounts-deals |
 holafly | https://esim.holafly.com/ | https://esim.holafly.com/data-plans/holafly-esim-discount-code/ |
