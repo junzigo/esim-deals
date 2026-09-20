@@ -2,7 +2,7 @@
 
 An independent, English-language directory of official travel eSIM promotions for US travelers. Built with Python's standard library. No runtime LLM, paid data API, database, server process or third-party Python dependency.
 
-**Deployment status: public preview deployed and browser-verified at https://esim-deals-preview.pages.dev/.** This is a separate Direct Upload preview project. GitHub repository creation, Git integration and scheduled automation remain pending; they are not claimed operational. The config currently uses the actual preview hostname. Use a separate Git-integrated Pages project for production and update the config to its confirmed hostname.
+**Deployment status: live at https://esim-deals-apb.pages.dev/.** Public source: https://github.com/junzigo/esim-deals. GitHub Actions run [35482450665](https://github.com/junzigo/esim-deals/actions/runs/35482450665) completed successfully on 2026-09-20. Its observation commit `cfa5059ea7ee8a948beb5f08c728e5f60a6e0210` automatically triggered successful Cloudflare Pages deployment `d0bf4866-0302-4478-a583-e266451c6110`. The production page was browser-verified. The six-hour schedule is configured; this verifies the push-triggered pipeline, not a future scheduled run.
 
 ## Run
 
@@ -26,7 +26,7 @@ Python 3.12 or later. Output: `site/`. Public observations: `data/offers.json`. 
 
 ## Deployment and automation
 
-Create the public repository `esim-deals-promo-radar`, connect it through Cloudflare Pages' Git integration, select the default branch, set build command `python build.py`, output directory `site`, and Python version 3.12. Set the confirmed production domain and repository URL in `.ilang/site.ilang` before production deployment. The Cloudflare GitHub App must be authorized for this repository; a Cloudflare API token alone does not grant access to GitHub.
+The public repository `junzigo/esim-deals` is connected to Cloudflare Pages project `esim-deals`, production branch `main`, build command `python build.py`, output directory `site`. Set the confirmed production domain and repository URL in `.ilang/site.ilang` before production deployment. The Cloudflare GitHub App must be authorized for this repository; a Cloudflare API token alone does not grant access to GitHub.
 
 `.github/workflows/update.yml` runs every six hours at minute 23 UTC, plus manual dispatch and relevant source changes. It tests, scrapes, builds, validates and commits only source observations. It uses GitHub's automatic `GITHUB_TOKEN` to push; no manually created data API key is required. Pages Git integration is intended to deploy that commit. Verify an actual Actions run **and the subsequent Pages deployment** before calling this automated pipeline operational. A workflow-created push does not recursively trigger another GitHub Actions push workflow.
 
