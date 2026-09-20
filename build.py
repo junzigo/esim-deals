@@ -107,11 +107,13 @@ def build(config_path=None, output=None, data_path=None):
         return 'No current offer independently confirmed'
     cards=''.join(card(o) for o in offers) or '<p>No current offers confirmed. Check the official providers below.</p>'
     filters='<button data-filter="all" aria-pressed="true">All offers</button>'+''.join(f'<button data-filter="{esc(p["id"])}" aria-pressed="false">{esc(label(p["id"]))}</button>' for p in cfg['providers'] if any(o['provider']==p['id'] for o in offers))
-    providers=''.join(f'<a class="provider-item" href="/providers/{p["id"]}/"><strong>{esc(label(p["id"]))} ↗</strong><span>{esc(status(p))}</span></a>' for p in cfg['providers'])
+    providers=''.join((f'<a class="provider-item" href="/providers/{p["id"]}/"><strong>{esc(label(p["id"]))} ↗</strong><span>{esc(status(p))}</span></a>' if any(o['provider']==p['id'] for o in offers) else f'<div class="provider-item"><strong>{esc(label(p["id"]))}</strong><span>{esc(status(p))}</span><a href="{esc(p["home"])}">Official website ↗</a></div>') for p in cfg['providers'])
     content=render('index.html',summary=f'{len(offers)} official-page offers observed across {len(cfg["providers"])} monitored providers. English-language sources for US travelers.',cards=cards,filters=filters,providers=providers,checked=esc(checked))
     write('/',f'eSIM offers & promo codes — {month} | {cfg["brand"]}','Explore source-linked travel eSIM offers with clear eligibility, expiry information and transparent check times.',content,[item_list(offers)],checked)
     for p in cfg['providers']:
         items=[o for o in offers if o['provider']==p['id']]
+        if not items:
+            continue
         name=label(p['id']); note=source_map.get(p['id'],{})
         content=render('provider.html',provider_name=esc(name),status=esc(status(p)),official=esc(p['home']),cards=''.join(card(o) for o in items) or '<p>No current offer confirmed. We do not fill gaps with invented codes.</p>',source_note=esc('Last attempt: '+note.get('attempted_at','Not yet checked')+'. Source: '+p['source']))
         service={'@type':'Service','name':name+' travel eSIM service','provider':{'@type':'Organization','name':name,'url':p['home']}}
