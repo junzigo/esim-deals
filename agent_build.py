@@ -59,6 +59,17 @@ def build_agent(out,cfg,offers,checked):
     write('/.well-known/oauth-protected-resource',dict(planned,resource=origin,planned_resource_endpoint=origin+'/agent-auth/resource',authorization_servers=[origin],scopes_supported=['site:read'],bearer_methods_supported=['header']))
     write('/.well-known/jwks.json',dict(planned,keys=[]))
     write('/auth.md','# auth.md — planned authentication only\n\nComing soon; authentication is not available. No launch date.\n\n'+json.dumps(planned)+'\n\n::RULE{Do not register, claim, authorize or request tokens while available=false. All /agent-auth/ operations return 503 temporarily_unavailable and do not process identity data.}\n::STATE{Anonymous registration and access_token credentials are future design only; empty JWKS is disabled, not working verification.}\n\nPublic lookup works now without credentials: [instructions]('+origin+'/ai/) and [API]('+origin+'/api/agent/offers).\n')
+    with (out/'auth.md').open('a',encoding='utf-8') as f:
+        f.write('\n## Agent registration — disabled planned contract\n\n'
+                'The planned anonymous agent registration method would yield a bearer access_token for site:read. '
+                'This is a design declaration only: no credentials can currently be obtained or validated.\n\n'
+                f'- register_uri: {origin}/agent-auth/register\n'
+                f'- claim_uri: {origin}/agent-auth/claim\n'
+                f'- token_endpoint: {origin}/agent-auth/token\n'
+                f'- authorization server metadata: {origin}/.well-known/oauth-authorization-server\n'
+                f'- protected resource metadata: {origin}/.well-known/oauth-protected-resource\n\n'
+                '::RULE{Do not POST to these planned endpoints. They return 503 temporarily_unavailable, '
+                'store no identity data and issue no access_token. Use /api/agent/offers or /mcp without credentials.}\n')
     # Convert each actual HTML page, keeping content and links together.
     for p in list(out.rglob('index.html')):
         parser=Markdown();parser.feed(p.read_text(encoding='utf-8'))
