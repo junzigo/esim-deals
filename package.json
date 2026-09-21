@@ -1,0 +1,11 @@
+{
+  "name": "esim-deals-agent-service",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build:agent": "esbuild agent/worker.js --bundle --format=esm --platform=browser --target=es2022 --outfile=site/_worker.js",
+    "test:agent": "node --test agent/test.mjs"
+  },
+  "dependencies": {"@modelcontextprotocol/sdk": "1.30.0", "zod": "3.25.76"},
+  "devDependencies": {"esbuild": "0.28.2"}
+}

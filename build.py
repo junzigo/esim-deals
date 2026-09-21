@@ -142,6 +142,8 @@ def build(config_path=None, output=None, data_path=None):
     (out/'_headers').write_text('/*\n  X-Content-Type-Options: nosniff\n  Referrer-Policy: strict-origin-when-cross-origin\n  Content-Security-Policy: default-src \'self\'; script-src \'self\'; style-src \'self\'; img-src \'self\' data:; object-src \'none\'; base-uri \'self\'; frame-ancestors \'none\'\n',encoding='utf-8')
     (out/'404.html').write_text('<!doctype html><html lang="en"><meta charset="utf-8"><meta name="robots" content="noindex"><title>Offer unavailable</title><h1>This offer is no longer listed.</h1><p>It may have expired or could not be confirmed.</p><a href="/">See current source checks</a></html>',encoding='utf-8')
     print(f'Built {len(routes)} indexable pages; {len(offers)} observed offers')
+    from agent_build import build_agent
+    build_agent(out, cfg, offers, checked)
     return offers
 
 if __name__=='__main__': build()

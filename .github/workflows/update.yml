@@ -9,6 +9,8 @@ on:
       - '.ilang/**'
       - 'templates/**'
       - 'assets/**'
+      - 'agent/**'
+      - 'package*.json'
       - '.github/workflows/update.yml'
 permissions:
   contents: write
@@ -26,12 +28,21 @@ jobs:
           python-version: '3.12'
       - name: Test integrity rules
         run: python -m unittest discover -s tests -v
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - name: Test read-only agent service
+        run: |
+          npm ci
+          npm run test:agent
       - name: Read public official sources
         run: python scraper.py
       - name: Build and validate site
         run: |
           python build.py
           python validate.py
+          npm run build:agent
       - name: Commit source observations
         run: |
           git config user.name 'github-actions[bot]'
