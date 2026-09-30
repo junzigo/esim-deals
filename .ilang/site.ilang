@@ -13,6 +13,7 @@ title price currency offer_url valid_until source_url fetched_at code discount_p
 ::MODULE{RUNTIME|title:机器读取 JSON 配置；只匹配公开页面正文}
 {
   "interval_hours": 6,
+  "linklan_claim_guide": {"enabled": true, "reported_on": "2026-09-30", "allowance": "1GB", "validity": "7 days", "delivery": "3 working days", "wechat_account": "Linklan eSIM"},
   "cron": "23 */6 * * *",
   "stale_after_hours": 30,
   "request_timeout_seconds": 25,

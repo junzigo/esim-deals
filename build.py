@@ -105,10 +105,15 @@ def build(config_path=None, output=None, data_path=None):
         if any(o['provider']==p['id'] for o in offers): return 'Official-page offer observed'
         if state.get('status')=='unavailable': return 'Source unavailable at the last check'
         return 'No current offer independently confirmed'
+    guide = cfg.get('linklan_claim_guide', {})
+    if guide.get('enabled'):
+        write('/guides/linklan-free-data/', 'Linklan free eSIM data: WeChat claim guide | '+cfg['brand'], 'How to request the reported Linklan welcome data package through its app and WeChat account, with source and eligibility limits.', render('linklan-guide.html', **{k: esc(v) for k, v in guide.items()}), lastmod=guide['reported_on'])
     cards=''.join(card(o) for o in offers) or '<p>No current offers confirmed. Check the official providers below.</p>'
     filters='<button data-filter="all" aria-pressed="true">All offers</button>'+''.join(f'<button data-filter="{esc(p["id"])}" aria-pressed="false">{esc(label(p["id"]))}</button>' for p in cfg['providers'] if any(o['provider']==p['id'] for o in offers))
     providers=''.join((f'<a class="provider-item" href="/providers/{p["id"]}/"><strong>{esc(label(p["id"]))} ↗</strong><span>{esc(status(p))}</span></a>' if any(o['provider']==p['id'] for o in offers) else f'<div class="provider-item"><strong>{esc(label(p["id"]))}</strong><span>{esc(status(p))}</span><a href="{esc(p["home"])}">Official website ↗</a></div>') for p in cfg['providers'])
     content=render('index.html',summary=f'{len(offers)} official-page offers observed across {len(cfg["providers"])} monitored providers. English-language sources for US travelers.',cards=cards,filters=filters,providers=providers,checked=esc(checked))
+    if guide.get('enabled'):
+        content += '<section class="prose"><h2>Linklan welcome data: how to request it</h2><p>A reader-supplied welcome message describes '+esc(guide['allowance'])+' for '+esc(guide['validity'])+' via the Linklan app and WeChat. Availability has not been independently confirmed.</p><a href="/guides/linklan-free-data/">Read the free-data claim steps and limitations ↗</a></section>'
     write('/',f'eSIM offers & promo codes — {month} | {cfg["brand"]}','Explore source-linked travel eSIM offers with clear eligibility, expiry information and transparent check times.',content,[item_list(offers)],checked)
     for p in cfg['providers']:
         items=[o for o in offers if o['provider']==p['id']]
