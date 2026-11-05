@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-11-05T07:01:44.701397+00:00",
+  "checked_at": "2026-11-05T20:06:44.684497+00:00",
   "offers": [
     {
       "id": "airalo-e71a43f0d3",
@@ -10,9 +10,9 @@
       "terms": "For a first eSIM purchase. Check eligibility and final savings with Airalo. Discount methods cannot be combined.",
       "offer_url": "https://www.airalo.com/m/features/airalo-discounts-deals",
       "source_url": "https://www.airalo.com/m/features/airalo-discounts-deals",
-      "fetched_at": "2026-11-05T07:01:44.701408+00:00",
+      "fetched_at": "2026-11-05T20:06:44.684511+00:00",
       "evidence": "NOVEMBER15! – enjoy 15% off your first eSIM",
-      "source_sha256": "c330a9b194c405080e66ede180247c63d1c79d0324063e41312410992fa4b561",
+      "source_sha256": "09649cf748a5dd9463ffeb383b87d161417c4f4a85a9540247a758b9f9130a82",
       "status": "observed"
     },
     {
@@ -24,7 +24,7 @@
       "terms": "Use the code for the specified plan type. Only one promo code per purchase. Monthly plans are subscriptions.",
       "offer_url": "https://esim.holafly.com/data-plans/holafly-esim-discount-code/",
       "source_url": "https://esim.holafly.com/data-plans/holafly-esim-discount-code/",
-      "fetched_at": "2026-11-05T07:01:47.027523+00:00",
+      "fetched_at": "2026-11-05T20:06:46.962045+00:00",
       "evidence": "Short trips Code (5% off): MYESIMNOW5",
       "source_sha256": "e92050ac3ff685990bfcb65f2e5650e948e13ca19d10c87fa70fd2cbbb8a7c01",
       "status": "observed"
@@ -38,7 +38,7 @@
       "terms": "Use the code for the specified plan type. Only one promo code per purchase. Monthly plans are subscriptions.",
       "offer_url": "https://esim.holafly.com/data-plans/holafly-esim-discount-code/",
       "source_url": "https://esim.holafly.com/data-plans/holafly-esim-discount-code/",
-      "fetched_at": "2026-11-05T07:01:47.027523+00:00",
+      "fetched_at": "2026-11-05T20:06:46.962045+00:00",
       "evidence": "Monthly plans Code (10% off): MONTHLYPLAN10",
       "source_sha256": "e92050ac3ff685990bfcb65f2e5650e948e13ca19d10c87fa70fd2cbbb8a7c01",
       "status": "observed"
@@ -52,9 +52,9 @@
       "terms": "First purchase/top-up in the Ubigi app or selfcare portal. Monthly data plans are excluded.",
       "offer_url": "https://cellulardata.ubigi.com/help-center/faq/ubigi-esim-service/ubigi-welcome-with-our-promo-code-welcome10/?wmc-currency=USD",
       "source_url": "https://cellulardata.ubigi.com/help-center/faq/ubigi-esim-service/ubigi-welcome-with-our-promo-code-welcome10/?wmc-currency=USD",
-      "fetched_at": "2026-11-05T07:01:49.724330+00:00",
+      "fetched_at": "2026-11-05T20:06:50.329688+00:00",
       "evidence": "promotional code WELCOME10 to get 10% discount on your first eSIM data plan",
-      "source_sha256": "cb256ad5e6a0af0674dc9203854259fbb728c3666d7ea88d50bf645906c5ef0e",
+      "source_sha256": "435ca08e734ae18be0b3ad89164f45504ee2102469992a81df6dea08bd3a803e",
       "status": "observed"
     },
     {
@@ -66,7 +66,7 @@
       "terms": "Redeem in the RedteaGO app under Me / Redeem Promo Code. Applies to Japan fixed standard data plans. The source is a seasonal guide; confirm availability before purchase.",
       "offer_url": "https://shop.redteago.com/japan-esim-guide",
       "source_url": "https://shop.redteago.com/japan-esim-guide",
-      "fetched_at": "2026-11-05T07:01:52.159463+00:00",
+      "fetched_at": "2026-11-05T20:06:53.417694+00:00",
       "evidence": "Get 30% Off for Your Japan eSIM Use the code in-app and stay connected in Japan. Code: JAPANTRIP26",
       "source_sha256": "6925ab98722bf0f149c9730e93c460a008f787cecb5dbd8bd6233d544146aa23",
       "status": "observed"
@@ -76,49 +76,49 @@
     {
       "provider": "airalo",
       "source_url": "https://www.airalo.com/m/features/airalo-discounts-deals",
-      "attempted_at": "2026-11-05T07:01:44.701408+00:00",
+      "attempted_at": "2026-11-05T20:06:44.684511+00:00",
       "status": "ok",
       "count": 1,
-      "fetched_at": "2026-11-05T07:01:44.701408+00:00"
+      "fetched_at": "2026-11-05T20:06:44.684511+00:00"
     },
     {
       "provider": "holafly",
       "source_url": "https://esim.holafly.com/data-plans/holafly-esim-discount-code/",
-      "attempted_at": "2026-11-05T07:01:47.027523+00:00",
+      "attempted_at": "2026-11-05T20:06:46.962045+00:00",
       "status": "ok",
       "count": 2,
-      "fetched_at": "2026-11-05T07:01:47.027523+00:00"
+      "fetched_at": "2026-11-05T20:06:46.962045+00:00"
     },
     {
       "provider": "nomad",
       "source_url": "https://www.nomadesim.com/",
-      "attempted_at": "2026-11-05T07:01:48.342056+00:00",
+      "attempted_at": "2026-11-05T20:06:48.555325+00:00",
       "status": "no_verified_offer",
       "count": 0,
-      "fetched_at": "2026-11-05T07:01:48.342056+00:00"
+      "fetched_at": "2026-11-05T20:06:48.555325+00:00"
     },
     {
       "provider": "saily",
       "source_url": "https://saily.com/coupon//",
-      "attempted_at": "2026-11-05T07:01:49.685784+00:00",
+      "attempted_at": "2026-11-05T20:06:50.219507+00:00",
       "status": "unavailable",
       "reason": "HTTP 403"
     },
     {
       "provider": "ubigi",
       "source_url": "https://cellulardata.ubigi.com/help-center/faq/ubigi-esim-service/ubigi-welcome-with-our-promo-code-welcome10/?wmc-currency=USD",
-      "attempted_at": "2026-11-05T07:01:49.724330+00:00",
+      "attempted_at": "2026-11-05T20:06:50.329688+00:00",
       "status": "ok",
       "count": 1,
-      "fetched_at": "2026-11-05T07:01:49.724330+00:00"
+      "fetched_at": "2026-11-05T20:06:50.329688+00:00"
     },
     {
       "provider": "redteago",
       "source_url": "https://shop.redteago.com/japan-esim-guide",
-      "attempted_at": "2026-11-05T07:01:52.159463+00:00",
+      "attempted_at": "2026-11-05T20:06:53.417694+00:00",
       "status": "ok",
       "count": 1,
-      "fetched_at": "2026-11-05T07:01:52.159463+00:00"
+      "fetched_at": "2026-11-05T20:06:53.417694+00:00"
     }
   ]
 }
